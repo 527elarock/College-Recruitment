@@ -1,0 +1,614 @@
+:root {
+    --purdue-gold: #CFB991;
+    --black: #000000;
+    --aged: #8E6F3E;
+    --rush: #DAAA00;
+    --field: #DDB945;
+    --dust: #EBD99F;
+    --steel: #555960;
+    --cool-gray: #6F727B;
+    --railway-gray: #9D9795;
+    --steam: #C4BFC0;
+    --white: #FFFFFF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 82px;
+    font-family: "Source Serif 4", Georgia, serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+span {
+    font-family: "Source Serif 4", Georgia, serif;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+
+/* NAVIGATION */
+
+.site-nav {
+    background: var(--black);
+    min-height: 82px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.brand-mark {
+    color: var(--white) !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: .9;
+}
+
+.brand-mark small {
+    font-size: .55rem;
+    letter-spacing: 2px;
+}
+
+.brand-p {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border: 2px solid var(--purdue-gold);
+    color: var(--purdue-gold);
+    font-size: 1.7rem;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    font-size: 1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--purdue-gold) !important;
+}
+
+
+/* HERO */
+
+.hero-section {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, .92),
+            rgba(0, 0, 0, .55)),
+        linear-gradient(135deg,
+            var(--steel),
+            var(--black));
+}
+
+.hero-content {
+    color: var(--white);
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.eyebrow,
+.section-label {
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.hero-section .eyebrow,
+.gold-label {
+    color: var(--purdue-gold);
+}
+
+.hero-section h1 {
+    max-width: 800px;
+    font-size: clamp(3.7rem, 8vw, 7.8rem);
+    margin-bottom: 1.5rem;
+}
+
+.hero-section h1 span {
+    color: var(--purdue-gold);
+}
+
+.hero-copy {
+    max-width: 590px;
+    font-size: 1.25rem;
+    color: var(--steam);
+    margin-bottom: 2rem;
+}
+
+.btn-gold {
+    background: var(--purdue-gold);
+    color: var(--black);
+    border: 2px solid var(--purdue-gold);
+    padding: .8rem 1.5rem;
+    font-weight: 600;
+}
+
+.btn-gold:hover {
+    background: var(--rush);
+    border-color: var(--rush);
+}
+
+
+/* INTRO */
+
+.intro-section {
+    padding: 7rem 0;
+}
+
+.intro-section h2,
+.about-content h2,
+.section-heading h2,
+.explore-panel h2,
+.final-cta h2 {
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    margin-bottom: 1.5rem;
+}
+
+.intro-section p:not(.section-label) {
+    font-size: 1.15rem;
+    color: var(--steel);
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--steam);
+}
+
+.stat-box {
+    padding: 2rem;
+    border-right: 1px solid var(--steam);
+}
+
+.stat-box:last-child {
+    border-right: 0;
+}
+
+.stat-box strong {
+    display: block;
+    color: var(--aged);
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: .8rem;
+}
+
+
+/* ABOUT */
+
+.about-section {
+    padding: 7rem 0;
+    background: var(--dust);
+}
+
+.about-panel {
+    background: var(--black);
+    color: var(--white);
+}
+
+.about-image {
+    min-height: 570px;
+}
+
+.image-placeholder,
+.life-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.life-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.life-large .life-image {
+    height: 600px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.life-large .life-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-placeholder span,
+.life-image span {
+    background: rgba(0, 0, 0, .78);
+    border: 1px solid var(--purdue-gold);
+    color: white;
+    padding: .75rem 1rem;
+    letter-spacing: 2px;
+}
+
+.about-content {
+    padding: 5rem;
+}
+
+.about-content .section-label {
+    color: var(--purdue-gold);
+}
+
+.about-content p:not(.section-label) {
+    color: var(--steam);
+    font-size: 1.1rem;
+}
+
+.text-link {
+    color: var(--purdue-gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* ACADEMICS */
+
+.academics-section {
+    background: var(--black);
+    color: var(--white);
+    padding: 7rem 0;
+}
+
+.academics-section .section-label {
+    color: var(--purdue-gold);
+}
+
+.section-heading {
+    max-width: 850px;
+    margin-bottom: 3rem;
+}
+
+.section-heading>p:last-child {
+    color: var(--steam);
+    font-size: 1.15rem;
+}
+
+.program-card {
+    height: 100%;
+    padding: 2.2rem;
+    border: 1px solid var(--steel);
+    background: #111111;
+    transition: .25s;
+}
+
+.program-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--purdue-gold);
+}
+
+.program-card.featured {
+    border-color: var(--purdue-gold);
+}
+
+.program-number {
+    color: var(--purdue-gold);
+}
+
+.program-card h3 {
+    font-size: 2.2rem;
+    margin: 2.5rem 0 1.2rem;
+}
+
+.program-card p {
+    color: var(--steam);
+}
+
+.program-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--purdue-gold);
+    text-decoration: none;
+}
+
+.learning-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem;
+    background: var(--purdue-gold);
+    color: var(--black);
+}
+
+.learning-panel h3 {
+    font-size: 2.4rem;
+}
+
+
+/* LIFE */
+
+.life-section {
+    padding: 7rem 0;
+}
+
+.life-grid {
+    display: grid;
+    grid-template-columns: 1.4fr .8fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.life-card {
+    border: 1px solid var(--steam);
+    background: white;
+}
+
+.life-large {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: start;
+    height: fit-content;
+}
+
+.life-large .life-image {
+    min-height: 390px;
+}
+
+.clubs-image {
+    background:
+        linear-gradient(135deg,
+            rgba(142, 111, 62, .55),
+            rgba(0, 0, 0, .3)),
+        repeating-linear-gradient(45deg,
+            var(--aged) 0 18px,
+            var(--steel) 18px 36px);
+}
+
+.athletics-image {
+    background:
+        linear-gradient(135deg,
+            rgba(218, 170, 0, .55),
+            rgba(0, 0, 0, .35)),
+        repeating-linear-gradient(-45deg,
+            var(--rush) 0 18px,
+            var(--black) 18px 36px);
+}
+
+.life-copy {
+    padding: 1.8rem;
+}
+
+.life-copy h3 {
+    font-size: 2rem;
+}
+
+.life-copy p:last-child {
+    color: var(--steel);
+}
+
+
+/* JAVASCRIPT SECTION */
+
+.explore-section {
+    padding: 5rem 0;
+    background: var(--steam);
+}
+
+.explore-panel {
+    background: var(--black);
+    color: white;
+    padding: 4rem;
+}
+
+.explore-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .7rem;
+    margin: 2rem 0;
+}
+
+.explore-btn {
+    border: 1px solid var(--purdue-gold);
+    background: transparent;
+    color: white;
+    padding: .7rem 1.2rem;
+    cursor: pointer;
+}
+
+.explore-btn:hover,
+.explore-btn.active {
+    background: var(--purdue-gold);
+    color: var(--black);
+}
+
+#explore-content {
+    max-width: 750px;
+    border-left: 3px solid var(--purdue-gold);
+    padding-left: 1.5rem;
+}
+
+#explore-content h3 {
+    font-size: 2rem;
+}
+
+#explore-content p {
+    color: var(--steam);
+}
+
+
+/* FINAL CTA */
+
+.final-cta {
+    padding: 8rem 0;
+    background: var(--black);
+    color: white;
+}
+
+.final-cta h2 {
+    color: var(--purdue-gold);
+    font-size: clamp(4rem, 9vw, 8.5rem);
+}
+
+.final-cta p:not(.section-label) {
+    max-width: 600px;
+    color: var(--steam);
+    font-size: 1.15rem;
+}
+
+.btn-outline-light {
+    border: 1px solid var(--purdue-gold);
+    color: white;
+    padding: .8rem 1.5rem;
+}
+
+.btn-outline-light:hover {
+    background: var(--purdue-gold);
+    color: var(--black);
+}
+
+
+/* FOOTER */
+
+.site-footer {
+    padding: 1.5rem 0;
+    background: #111111;
+    color: var(--steam);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+
+    .hero-content {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .about-image {
+        min-height: 380px;
+    }
+
+    .learning-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .life-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .life-large {
+        grid-row: auto;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .hero-section {
+        min-height: 80vh;
+    }
+
+    .hero-section h1 {
+        font-size: 3.4rem;
+    }
+
+    .intro-section,
+    .about-section,
+    .academics-section,
+    .life-section {
+        padding: 4.5rem 0;
+    }
+
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-box {
+        border-right: 0;
+        border-bottom: 1px solid var(--steam);
+    }
+
+    .about-content {
+        padding: 2rem;
+    }
+
+    .program-card {
+        padding: 1.7rem;
+    }
+
+    .learning-panel {
+        padding: 2rem;
+    }
+
+    .explore-panel {
+        padding: 2rem;
+    }
+
+    .final-cta {
+        padding: 5rem 0;
+    }
+}
+
+
+.hero-section {
+    min-height: 78vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--black);
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .62);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.about-image {
+    min-height: 570px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 570px;
+    object-fit: cover;
+    display: block;
+}
