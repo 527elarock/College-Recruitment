@@ -1,3 +1,5 @@
+
+//find HTML with those classes
 const exploreButtons = document.querySelectorAll(".explore-btn");
 const exploreContent = document.getElementById("explore-content");
 
@@ -20,18 +22,21 @@ const exploreInfo = {
 
 exploreButtons.forEach(function (button) {
   button.addEventListener("click", function () {
-    const topic = button.dataset.topic;
-
     exploreButtons.forEach(function (item) {
       item.classList.remove("active");
     });
 
     button.classList.add("active");
 
-    exploreContent.innerHTML = `
-            <h3>${exploreInfo[topic].title}</h3>
-            <p>${exploreInfo[topic].text}</p>
-        `;
+    let topic = button.dataset.topic;
+
+    exploreContent.innerHTML =
+      "<h3>" +
+      exploreInfo[topic].title +
+      "</h3>" +
+      "<p>" +
+      exploreInfo[topic].text +
+      "</p>";
   });
 });
 

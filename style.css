@@ -70,14 +70,11 @@ h3 {
     letter-spacing: 2px;
 }
 
-.brand-p {
-    display: grid;
-    place-items: center;
-    width: 43px;
-    height: 43px;
-    border: 2px solid var(--purdue-gold);
-    color: var(--purdue-gold);
-    font-size: 1.7rem;
+.brand-mark img {
+    width: 70px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
 }
 
 .nav-link {
@@ -92,6 +89,24 @@ h3 {
 
 
 /* HERO */
+
+.hero-content {
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 .hero-section {
     min-height: 78vh;
@@ -306,6 +321,15 @@ h3 {
     border-color: var(--purdue-gold);
 }
 
+.program-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px var(--purdue-gold);
+}
+
 .program-card.featured {
     border-color: var(--purdue-gold);
 }
@@ -403,6 +427,80 @@ h3 {
 
 .life-copy p:last-child {
     color: var(--steel);
+}
+
+/* COST + ADMISSIONS */
+
+.cost-section {
+    padding: 7rem 0;
+    background: var(--dust);
+}
+
+.cost-section .section-heading {
+    max-width: 850px;
+    margin-bottom: 3rem;
+}
+
+.cost-section .section-heading>p:last-child {
+    color: var(--steel);
+    font-size: 1.15rem;
+}
+
+.cost-card {
+    height: 100%;
+    padding: 2.2rem;
+    border: 1px solid var(--steam);
+    background: var(--white);
+    transition: .25s;
+}
+
+.cost-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--aged);
+}
+
+.cost-card.featured {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--purdue-gold);
+}
+
+.cost-number {
+    color: var(--aged);
+    font-size: 1rem;
+}
+
+.cost-card.featured .cost-number {
+    color: var(--purdue-gold);
+}
+
+.cost-card h3 {
+    font-size: 2.2rem;
+    margin: 2.5rem 0 1.2rem;
+}
+
+.cost-card p {
+    color: var(--steel);
+}
+
+.cost-card.featured p {
+    color: var(--steam);
+}
+
+.cost-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--aged);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cost-card.featured a {
+    color: var(--purdue-gold);
+}
+
+.cost-card a:hover {
+    text-decoration: underline;
 }
 
 
@@ -611,4 +709,59 @@ h3 {
     min-height: 570px;
     object-fit: cover;
     display: block;
+}
+
+/* NAVIGATION LOAD ANIMATION */
+
+.navbar-nav .nav-item {
+    opacity: 0;
+    animation: navFadeIn 0.6s ease forwards;
+}
+
+.navbar-nav .nav-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.navbar-nav .nav-item:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.navbar-nav .nav-item:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.navbar-nav .nav-item:nth-child(4) {
+    animation-delay: 0.65s;
+}
+
+.navbar-nav .nav-item:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brand-mark {
+    animation: logoFadeIn 0.8s ease;
+}
+
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
