@@ -3,6 +3,7 @@
 const exploreButtons = document.querySelectorAll(".explore-btn");
 const exploreContent = document.getElementById("explore-content");
 
+//Object for when they click the explore buttons
 const exploreInfo = {
   academics: {
     title: "Academics",
@@ -20,16 +21,20 @@ const exploreInfo = {
   },
 };
 
+//loops through every button in exploreButtons and adds click event.
+//makes sure previous aren't active 
 exploreButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     exploreButtons.forEach(function (item) {
       item.classList.remove("active");
     });
-
+    
     button.classList.add("active");
-
+    //removes data-topic 
     let topic = button.dataset.topic;
-
+    
+    //changes html inside element stored in exploreContent
+    //creates and closes h3 and paragraph
     exploreContent.innerHTML =
       "<h3>" +
       exploreInfo[topic].title +
@@ -40,12 +45,16 @@ exploreButtons.forEach(function (button) {
   });
 });
 
+
 const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 const nav = document.getElementById("mainNav");
 
+//goes through nav links and adds click event
+//if narrower that 992 pixels, go mobile
 navLinks.forEach(function (link) {
   link.addEventListener("click", function () {
     if (window.innerWidth < 992) {
+      //if collapsed, close mobile menu
       const collapse = bootstrap.Collapse.getInstance(nav);
 
       if (collapse) {
